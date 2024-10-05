@@ -99,3 +99,8 @@
     min-height: 24px;
     max-width: auto;
   }
+  footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
