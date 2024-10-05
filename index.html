@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubricas de Evaluación </title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+        <h1>Rubricas de Evaluación</h1>
+        <div class="container">
+<form id="evaluation">
+    <label for="estudiante">Estudiante</label>
+    <input type="string" class="estudiante"  id="estudiante" placeholder="Nombre y Apellido" required />
+    <fieldset id="actividad">
+        <legend> Actividad </legend>
+        <input type="string" class="actividad" placeholder="Ingresa la actividad" >
+        <div class="controls">
+            <span>
+<label for="entry-dropdown">Evaluación:</label>
+<select class="evaluacionAct" name="options" id="entry-dropdown">  
+<option  value=""></option>
+<option  value="Excelente">Excelente </option>
+<option value="Muy bueno">Muy bueno </option>
+<option  value="Bueno">Bueno</option>
+<option  value="En proceso">En proceso</option>
+</select>
+
+
+            </span>
+          </div>
+
+    </fieldset>
+    <fieldset id="contenido">
+        <legend> Contenido </legend>
+        <input type="string" class="contenido" placeholder="Ingresa el contenido" >
+        <div class="controls">
+            <span>
+<label for="entry-dropdown">Evaluación:</label>
+<select class="evaluacionCont" name="options" id="entry-dropdown">  
+    <option  value=""></option>
+    <option  value="Excelente">Excelente </option>
+    <option value="Muy bueno">Muy bueno </option>
+    <option  value="Bueno">Bueno</option>
+    <option  value="En proceso">En proceso</option>
+    </select>
+
+
+            </span>
+          </div>
+      
+    </fieldset>
+    <fieldset id="convivencia">
+        <legend> Convivencia </legend>
+        <input type="string" class="convivencia" placeholder="Ingresa convivencia" >
+        <div class="controls">
+            <span>
+<label for="entry-dropdown">Evaluación:</label>
+<select class="evaluacionConv" name="options" id="entry-dropdown">  
+    <option  value=""></option>
+    <option  value="Excelente">Excelente </option>
+    <option value="Muy bueno">Muy bueno </option>
+    <option  value="Bueno">Bueno</option>
+    <option  value="En proceso">En proceso</option>
+    </select>
+
+
+            </span>
+          </div>
+       
+    </fieldset>
+</form>
+
+        </div>
+        <div class="controls">
+            <span>
+
+
+<button type="button" id="btn-agregar">Agregar evaluación</button>
+
+            </span>
+          </div>
+
+       
+    </form>
+   
+    <div id="text"></div>
+</div>
+    </main>
+    <footer>
+        <p class="text-shadow">Creado con ♡ por Ange</p>
+    </footer>
+<script src="./index.js"></script>
+</body>
+</html>
