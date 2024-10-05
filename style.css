@@ -65,8 +65,7 @@
   fieldset,
   label,
   button,
-  input,
-  select {
+  input{
     margin-bottom: 10px;
     width: 90%;
     max-width: 680px;
@@ -94,4 +93,9 @@
     align-items: center;
     width: 90%;
     max-width: 680px;
+  }
+  select,
+  .entry-dropdown{
+    min-height: 24px;
+    max-width: auto;
   }

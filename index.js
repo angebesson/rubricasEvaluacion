@@ -4,6 +4,7 @@ const boton = document.getElementById("btn-agregar");
 if (text) { text.innerText = "En el trabajo con "; }
 if (boton) {
   boton.addEventListener("click", () => {
+    let estudiante = document.querySelector(".estudiante").value;
     let actividad = document.querySelector(".actividad").value;
     let contenido = document.querySelector(".contenido").value;
     let convivencia = document.querySelector(".convivencia").value;
@@ -25,7 +26,7 @@ if (boton) {
         let evaluacionCont = document.querySelector(".evaluacionCont").value;
         let evaluacionConv = document.querySelector(".evaluacionConv").value;
         text.innerText = "Estudiante: " + estudiante + "\n";
-        text.innerText += " En el trabajo con " + actividad +" "+ evaluacionAct + "\n";
+        text.innerText += " En el trabajo con " + actividad +" "+ evaluacionAct + textoEvaluacion()+ "\n";
         text.innerText += " Donde abordamos " + contenido +" "+ evaluacionCont + "\n";
         text.innerText += " Logra una convivencia " + convivencia +" "+ evaluacionConv;
        
@@ -33,7 +34,12 @@ if (boton) {
         });
     }
 
-
+const textoEvaluacion =()=>{
+    let evaluacionAct = document.querySelector(".evaluacionAct").value;
+    if (evaluacionAct == "Excelente"){
+        text.innerText+= " Es original en sus propuestas, construyendo sobre la base del contenido."
+    }
+}
 
 
 
