@@ -17,6 +17,30 @@
             <form id="evaluation">
                 <label for="estudiante">Estudiante</label>
                 <input type="string" class="estudiante" id="estudiante" placeholder="Nombre y Apellido" required />
+                <div class="data-extra">
+                    <span>
+                        <fieldset class="data">
+                            <legend> Materia:</legend>
+                        
+                        <select class="materia" name="options" id="entry-dropdown">
+                            <option value=""></option>
+                            <option value="Artes Visuales">Artes Visuales </option>
+                            <option value="Educación Física">Educación Física</option>
+                            <option value="Tecnología">Tecnología </option>
+                            <option value="Música">Música</option>
+                        </select>
+                    </fieldset>
+                    </span>
+                    <fieldset class="data" >
+                        <legend> Curso </legend>
+                        <input type="string" class="curso" id="curso" placeholder="Curso"  />
+                    </fieldset>
+                    <fieldset class="data">
+                        <legend> Fecha </legend>
+                        <input class="fecha" type="date" id="fecha" name="fecha" required>
+                    </select>
+                    </fieldset>
+                </div>
                 <fieldset id="actividad">
                     <legend> Actividad </legend>
                     <input type="string" class="actividad" placeholder="Ingresa la actividad">
@@ -30,8 +54,6 @@
                                 <option value="Bueno">Bueno</option>
                                 <option value="En proceso">En proceso</option>
                             </select>
-
-
                         </span>
                     </div>
 
@@ -75,6 +97,13 @@
                 <button type="button" id="btn-agregar">Agregar evaluación</button>
             </form>
             <div id="text"></div>
+            <!-- <div class="card-info" id="card-info">
+                Estudiante: scas Curso:
+Materia: Educación Física
+En el trabajo con: asc Desempeño: Excelente. Es original en sus propuestas, construyendo sobre la base del contenido.
+Donde abordamos: ascs Desempeño: Muy bueno. Aborda la mayoría de los contenidos.
+En la convivencia: acsc En proceso. No acepta los acuerdos de convivencia.
+            </div> -->
         </div>
     </main>
     <footer>
