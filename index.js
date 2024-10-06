@@ -11,7 +11,7 @@ console.log (ahora.toLocaleDateString());
 hoy()
 diadeHoy()
 
-if (text) { text.innerText = "En el trabajo con "; }
+if (text) { text.innerText = "Resultado de evaluación: "; }
 if (boton) {
     boton.addEventListener("click", () => {
         let materia = document.querySelector(".materia").value;
@@ -34,15 +34,17 @@ if (boton) {
             let estudiante = document.querySelector(".estudiante").value;
             let materia = document.querySelector(".materia").value;
             let fechaSelec = document.querySelector(".fecha").value;
+            let fecha = new Date(fechaSelec);
+            let fechaFormat =  fecha.toLocaleDateString();
             let curso = document.querySelector(".curso").value;
             let actividad = document.querySelector(".actividad").value;
             let evaluacionAct = document.querySelector(".evaluacionAct").value;
             let evaluacionCont = document.querySelector(".evaluacionCont").value;
             let evaluacionConv = document.querySelector(".evaluacionConv").value;
-            text.innerText = "Estudiante: " + estudiante + "    ";
-            text.innerText += "      Curso: " + curso +" ";
-            text.innerText += "Materia: " + materia + " ";
-            text.innerText += "Fecha: "+ fechaSelec + "\n";
+            text.innerHTML = "Estudiante: " + estudiante + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            text.innerHTML += "      Curso: " + curso +"&nbsp;&nbsp;&nbsp;&nbsp;";
+            text.innerHTML += "Materia: " + materia + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            text.innerText += "Fecha: "+ fechaFormat + "\n";
             text.innerText += " En el trabajo con: " + actividad + " Desempeño: " + evaluacionAct + textoEvaluacionAct() + "\n";
             text.innerText += " Donde abordamos: " + contenido + " Desempeño: " + evaluacionCont + textoEvaluacionCont() + "\n";
             text.innerText += " En la convivencia: " + convivencia + " " + evaluacionConv + textoEvaluacionConv();
