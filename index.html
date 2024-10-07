@@ -7,12 +7,13 @@
     <title>Rúbricas de Evaluación </title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://kit.fontawesome.com/8425a3d85b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <main>
-        <h1>Rúbricas de Evaluación</h1>
+        <h1>Rúbricas de Evaluación <i class="fa-solid fa-palette"></i></h1>
         <div class="container">
             <form id="evaluation">
                 <label for="estudiante">Estudiante</label>
@@ -24,8 +25,12 @@
                         
                         <select class="materia" name="options" id="entry-dropdown">
                             <option value=""></option>
+                            <option value="Matemáticas">Matemáticas </option>
+                            <option value="Lengua">Lengua</option>
+                            <option value="Ciencias Naturales">Ciencias Naturales</option>
+                            <option value="Ciencias Sociales">Ciencias Sociales</option>
                             <option value="Artes Visuales">Artes Visuales </option>
-                            <option value="Educación Física">Educación Física</option>
+                            <option value="Educación Física ">Educación Física</option>
                             <option value="Tecnología">Tecnología </option>
                             <option value="Música">Música</option>
                         </select>
@@ -41,26 +46,9 @@
                     </select>
                     </fieldset>
                 </div>
-                <fieldset id="actividad">
-                    <legend> Actividad </legend>
-                    <input type="string" class="actividad" placeholder="Ingresa la actividad">
-                    <div class="controls">
-                        <span>
-                            <label for="entry-dropdown">Evaluación:</label>
-                            <select class="evaluacionAct" name="options" id="entry-dropdown">
-                                <option value=""></option>
-                                <option value="Excelente">Excelente </option>
-                                <option value="Muy bueno">Muy bueno </option>
-                                <option value="Bueno">Bueno</option>
-                                <option value="En proceso">En proceso</option>
-                            </select>
-                        </span>
-                    </div>
-
-                </fieldset>
                 <fieldset id="contenido">
                     <legend> Contenido </legend>
-                    <input type="string" class="contenido" placeholder="Ingresa el contenido">
+                    <input type="string" class="contenido" placeholder="Ingresa la actividad">
                     <div class="controls">
                         <span>
                             <label for="entry-dropdown">Evaluación:</label>
@@ -69,7 +57,43 @@
                                 <option value="Excelente">Excelente </option>
                                 <option value="Muy bueno">Muy bueno </option>
                                 <option value="Bueno">Bueno</option>
-                                <option value="En proceso">En proceso</option>
+                                <option value="En proceso(EPAC)">En proceso(EPAC)</option>
+                            </select>
+                        </span>
+                    </div>
+
+                </fieldset>
+                <fieldset id="contenido">
+                    <legend> Contenido </legend>
+                    <input type="string" class="contenido1" placeholder="Ingresa el contenido">
+                    <div class="controls">
+                        <span>
+                            <label for="entry-dropdown">Evaluación:</label>
+                            <select class="evaluacionCont1" name="options" id="entry-dropdown">
+                                <option value=""></option>
+                                <option value="Excelente">Excelente </option>
+                                <option value="Muy bueno">Muy bueno </option>
+                                <option value="Bueno">Bueno</option>
+                                <option value="En proceso(EPAC)">En proceso(EPAC)</option>
+                            </select>
+
+
+                        </span>
+                    </div>
+
+                </fieldset>
+                <fieldset id="contenido2">
+                    <legend> Contenido </legend>
+                    <input type="string" class="contenido2" placeholder="Ingresa el contenido">
+                    <div class="controls">
+                        <span>
+                            <label for="entry-dropdown">Evaluación:</label>
+                            <select class="evaluacionCont2" name="options" id="entry-dropdown">
+                                <option value=""></option>
+                                <option value="Excelente">Excelente </option>
+                                <option value="Muy bueno">Muy bueno </option>
+                                <option value="Bueno">Bueno</option>
+                                <option value="En proceso(EPAC)">En proceso(EPAC)</option>
                             </select>
 
 
@@ -85,7 +109,6 @@
                             <label for="entry-dropdown">Evaluación:</label>
                             <select class="evaluacionConv" name="options" id="entry-dropdown">
                                 <option value=""></option>
-                                <option value="Excelente">Excelente </option>
                                 <option value="Muy buena">Muy buena </option>
                                 <option value="Buena">Buena</option>
                                 <option value="En proceso">En proceso</option>
