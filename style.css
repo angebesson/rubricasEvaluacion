@@ -65,6 +65,7 @@ div {
 
 button {
   cursor: pointer;
+  border-radius: 12px;
   text-decoration: none;
   background-color: var(--light-yellow);
   border: 2px solid var(--dark-yellow);

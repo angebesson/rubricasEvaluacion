@@ -2,6 +2,11 @@ const text = document.querySelector("#text");
 const boton = document.getElementById("btn-agregar");
 let materia = document.querySelector(".materia").value;
 
+function accionUsuario(event){
+    event.preventDefault()
+}
+
+
 if (text) { text.innerText = "Resultado de evaluación: "; }
 if (boton) {
     boton.addEventListener("click", () => {
