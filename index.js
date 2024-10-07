@@ -12,7 +12,10 @@ if (boton) {
         let contenido2 = document.querySelector(".contenido2").value;
         let convivencia = document.querySelector(".convivencia").value;
         let evaluacionCont = document.querySelector(".evaluacionCont").value;
-        if (evaluacionCont === "" || contenido === "" || materia === "" || fechaSelec === "") {
+        let evaluacionCont1 = document.querySelector(".evaluacionCont1").value;
+        let evaluacionCont2 = document.querySelector(".evaluacionCont2").value;
+        let evaluacionConv = document.querySelector(".evaluacionConv").value;
+        if (evaluacionCont === "" || contenido === "" || materia === "" || fechaSelec === "" || evaluacionCont1 === "" || evaluacionCont2 === "" || evaluacionConv === "") {
             Toastify({
                 text: "Ingresa dato faltante",
                 className: "info",
@@ -36,14 +39,15 @@ if (boton) {
     const icono = iconForMat(materia); 
     
     text.innerHTML = "";
-    text.insertAdjacentHTML('beforeend', `Estudiante: ${estudiante}&nbsp;&nbsp;&nbsp;&nbsp;`);
-    text.insertAdjacentHTML('beforeend', `Curso: ${curso}&nbsp;&nbsp;&nbsp;&nbsp;`);
-    text.insertAdjacentHTML('beforeend', `Materia: ${materia} ${icono}&nbsp;&nbsp;&nbsp;&nbsp;`);
-    text.insertAdjacentHTML('beforeend', `Período evaluado: ${fechaFormat}<br>`);
-    text.insertAdjacentHTML('beforeend', `En el trabajo con: ${contenido} Desempeño: ${evaluacionCont} ${textoEvaluacionCont()}<br>`);
-    text.insertAdjacentHTML('beforeend', `En el trabajo con: ${contenido1} Desempeño: ${evaluacionCont1} ${textoEvaluacionCont1()}<br>`);
-    text.insertAdjacentHTML('beforeend', `En el trabajo con: ${contenido2} Desempeño: ${evaluacionCont2} ${textoEvaluacionCont2()}<br>`);
-    text.insertAdjacentHTML('beforeend', `En la convivencia: ${convivencia} ${evaluacionConv} ${textoEvaluacionConv()}`);
+    text.insertAdjacentHTML('beforeend', `<span class="card-title">${estudiante.toUpperCase()}</span>`);
+    text.insertAdjacentHTML('beforeend', `  <div class="card-content">
+                             <p>Curso: ${curso} | Materia: ${materia} </p>
+                             <p>Período evaluado: ${fechaFormat}<br></p>
+                             </div>`);
+    text.insertAdjacentHTML('beforeend', `<div class="content1"><p>• En el trabajo con: ${contenido}</p> <p>Desempeño:  <strong> ${evaluacionCont} </strong>${textoEvaluacionCont()} </p> </div>`);
+    text.insertAdjacentHTML('beforeend', `<div class="content2"><p>• En el trabajo con: ${contenido1}</p> <p>Desempeño:  <strong> ${evaluacionCont1} </strong> ${textoEvaluacionCont1()}</p>`);
+    text.insertAdjacentHTML('beforeend', `<div class="content3"><p>• En el trabajo con: ${contenido2}</p> <p>Desempeño:  <strong> ${evaluacionCont2} </strong> ${textoEvaluacionCont2()}</p>`);
+    text.insertAdjacentHTML('beforeend', `<div class="conviv"><p>• En la convivencia:${convivencia}</p><p> <strong>${evaluacionConv}</strong>${textoEvaluacionConv()}</p>`);
         }
     });
 }
@@ -65,50 +69,50 @@ const textoEvaluacionCont = () => {
     let evaluacionCont1 = document.querySelector(".evaluacionCont1").value;
     let evaluacionCont2 = document.querySelector(".evaluacionCont2").value;
     if (evaluacionCont  === "Excelente") {
-        return ". Utiliza varias vías para resolver la propuesta. Construye su propio aprendizaje, autónomamente."
+        return ": Utiliza varias vías para resolver la propuesta. Construye su propio aprendizaje, autónomamente."
     } else if (evaluacionCont  === "Muy bueno") {
-        return ". Presenta un buen ritmo de trabajo, manifiesta interés, desempeñándose eficazmente.";
+        return ": Presenta un buen ritmo de trabajo, manifiesta interés, desempeñándose eficazmente.";
     } else if (evaluacionCont  === "Bueno") {
-        return ". Trabaja correctamente en clase.";
+        return ": Trabaja correctamente en clase.                                ";
     } else if (evaluacionCont  === "En proceso(EPAC)") {
-        return ". Requiere apoyo e intervención docente en todo momento para lograr construir su aprendizaje.Aún no adquirió el contenido enseñado.";
+        return ": Requiere apoyo e intervención docente en todo momento para lograr construir su aprendizaje.Aún no adquirió el contenido enseñado.";
     } return "";
 }
 
 const textoEvaluacionCont1 = () => {
     let evaluacionCont1 = document.querySelector(".evaluacionCont1").value;
         if (evaluacionCont1  === "Excelente") {
-        return ". Utiliza varias vías para resolver la propuesta. Construye su propio aprendizaje, autónomamente."
+        return ": Utiliza varias vías para resolver la propuesta. Construye su propio aprendizaje, autónomamente."
     } else if (evaluacionCont1  === "Muy bueno") {
-        return ". Presenta un buen ritmo de trabajo, manifiesta interés, desempeñándose eficazmente.";
+        return ": Presenta un buen ritmo de trabajo, manifiesta interés, desempeñándose eficazmente.";
     } else if (evaluacionCont1  === "Bueno") {
-        return ". Trabaja correctamente en clase.";
+        return ": Trabaja correctamente en clase.                         ";
     } else if (evaluacionCont1  === "En proceso(EPAC)") {
-        return ". Requiere apoyo e intervención docente en todo momento para lograr construir su aprendizaje.Aún no adquirió el contenido enseñado.";
+        return ": Requiere apoyo e intervención docente en todo momento para lograr construir su aprendizaje.Aún no adquirió el contenido enseñado.";
     } return "";
 }
 
 const textoEvaluacionConv = () => {
     let evaluacionConv = document.querySelector(".evaluacionConv").value;
      if (evaluacionConv === "Muy buena") {
-        return ". Logra una buena convivencia destacándose por sus valores, respetando a sus pares y docente.";
+        return ": Logra una buena convivencia destacándose por sus valores, respetando a sus pares y docente.";
     } else if (evaluacionConv === "Buena") {
-        return ". Se debe recordar pautas de comportamiento, como dialogar, tratarse con respeto, compartir en armonía.";
+        return ": Se debe recordar pautas de comportamiento, como dialogar, tratarse con respeto, compartir en armonía.";
     } else if (evaluacionConv === "En proceso") {
-        return ". No pone en práctica las sugerencias brindadas por el docente, debe continuar trabajando la escucha, la comunicación y el respeto a los demás.";
+        return ": No pone en práctica las sugerencias brindadas por el docente, debe continuar trabajando la escucha, la comunicación y el respeto a los demás.";
     } return "";
 }
 
 const textoEvaluacionCont2 = () => {
      let evaluacionCont2 = document.querySelector(".evaluacionCont2").value;
     if (evaluacionCont2  === "Excelente") {
-        return ". Utiliza varias vías para resolver la propuesta. Construye su propio aprendizaje, autónomamente."
+        return ": Utiliza varias vías para resolver la propuesta. Construye su propio aprendizaje, autónomamente."
     } else if (evaluacionCont2  === "Muy bueno") {
-        return ". Presenta un buen ritmo de trabajo, manifiesta interés, desempeñándose eficazmente.";
+        return ": Presenta un buen ritmo de trabajo, manifiesta interés, desempeñándose eficazmente.";
     } else if (evaluacionCont2  === "Bueno") {
-        return ". Trabaja correctamente en clase.";
+        return ": Trabaja correctamente en clase.                             ";
     } else if (evaluacionCont2  === "En proceso(EPAC)") {
-        return ". Requiere apoyo e intervención docente en todo momento para lograr construir su aprendizaje.Aún no adquirió el contenido enseñado.";
+        return ": Requiere apoyo e intervención docente en todo momento para lograr construir su aprendizaje.Aún no adquirió el contenido enseñado.";
     } return "";
 }
 

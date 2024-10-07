@@ -12,8 +12,14 @@
 </head>
 
 <body>
+    <nav>
+        <header>
+            <a href="./index.html"> <h1>Rúbricas de Evaluación <i class="fa-solid fa-palette"></i></h1></a>
+            
+        </header>
+    </nav>
     <main>
-        <h1>Rúbricas de Evaluación <i class="fa-solid fa-palette"></i></h1>
+
         <div class="container">
             <form id="evaluation">
                 <label for="estudiante">Estudiante</label>
@@ -22,28 +28,28 @@
                     <span>
                         <fieldset class="data">
                             <legend> Materia:</legend>
-                        
-                        <select class="materia" name="options" id="entry-dropdown">
-                            <option value=""></option>
-                            <option value="Matemáticas">Matemáticas </option>
-                            <option value="Lengua">Lengua</option>
-                            <option value="Ciencias Naturales">Ciencias Naturales</option>
-                            <option value="Ciencias Sociales">Ciencias Sociales</option>
-                            <option value="Artes Visuales">Artes Visuales </option>
-                            <option value="Educación Física ">Educación Física</option>
-                            <option value="Tecnología">Tecnología </option>
-                            <option value="Música">Música</option>
-                        </select>
-                    </fieldset>
+
+                            <select class="materia" name="options" id="entry-dropdown">
+                                <option value=""></option>
+                                <option value="Matemáticas">Matemáticas </option>
+                                <option value="Lengua">Lengua</option>
+                                <option value="Ciencias Naturales">Ciencias Naturales</option>
+                                <option value="Ciencias Sociales">Ciencias Sociales</option>
+                                <option value="Artes Visuales">Artes Visuales </option>
+                                <option value="Educación Física ">Educación Física</option>
+                                <option value="Tecnología">Tecnología </option>
+                                <option value="Música">Música</option>
+                            </select>
+                        </fieldset>
                     </span>
-                    <fieldset class="data" >
+                    <fieldset class="data">
                         <legend> Curso </legend>
-                        <input type="string" class="curso" id="curso" placeholder="Curso"  />
+                        <input type="string" class="curso" id="curso" placeholder="Curso" />
                     </fieldset>
                     <fieldset class="data">
                         <legend> Fecha </legend>
                         <input class="fecha" type="date" id="fecha" name="fecha" required>
-                    </select>
+                        </select>
                     </fieldset>
                 </div>
                 <fieldset id="contenido">
@@ -119,19 +125,16 @@
                 </fieldset>
                 <button type="button" id="btn-agregar">Agregar evaluación</button>
             </form>
-            <div id="text"></div>
-            <!-- <div class="card-info" id="card-info">
-                Estudiante: scas Curso:
-Materia: Educación Física
-En el trabajo con: asc Desempeño: Excelente. Es original en sus propuestas, construyendo sobre la base del contenido.
-Donde abordamos: ascs Desempeño: Muy bueno. Aborda la mayoría de los contenidos.
-En la convivencia: acsc En proceso. No acepta los acuerdos de convivencia.
-            </div> -->
+            <div>
+                <div class="card-info" id="text"></div>
+            </div>
+           
         </div>
     </main>
     <footer>
         <p class="text-shadow">Creado con ♡ por Ange</p>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
     <script src="./index.js"></script>
 </body>
 

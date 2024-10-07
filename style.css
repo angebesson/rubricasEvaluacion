@@ -4,11 +4,20 @@
   box-sizing: border-box;
   font-family: "Lato", Helvetica, Arial, sans-serif;
 }
-
+@media print{
+  body * :not(#text) :not(#text *){
+    visibility: hidden;
+  }
+  #text{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
 :root {
-  --light-grey: #f5f6f7;
+  --light-grey: #222325;
   --dark-blue: #0a0a23;
-  --fcc-blue: #1b1b32;
+  --fcc-blue: #9191ba;
   --light-yellow: #fecc4c;
   --dark-yellow: #feac32;
   --light-pink: #ffadad;
@@ -19,14 +28,16 @@
 body {
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-size: 18px;
-  background-color: var(--fcc-blue);
-  color: var(--light-grey);
+  color: #213547;
+    background-color: #899ea1;
 }
 
 .text-shadow {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-
+a{
+  text-decoration: none;
+}
 h1 {
   text-align: center;
 }
@@ -50,7 +61,7 @@ legend {
 div {
   display: flex;
   flex-direction: column;
-}
+  }
 
 button {
   cursor: pointer;
@@ -93,11 +104,13 @@ input {
   font-size: 1.2em;
 }
 
-.text {
+#text {
   justify-content: center;
   align-items: center;
   width: 90%;
   max-width: 680px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 select,
@@ -129,15 +142,23 @@ footer {
   margin: 10px;
 }
 
+.card-title{
+  color: #32229a;
+  position: unset;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  justify-content: space-around;
+  background: linear-gradient(to right, #ff7f5f7e, #feb47b6b);
+}
 .card-info {
   background-color: #fafafa;
   display: flex;
-  flex-wrap: wrap;
-  width: auto;
-  height: 100dvw;
+  width: fit-content;
   margin: 10px;
+  padding: 10px;
   justify-content: center;
-  gap: 2em;
+  
 }
 
 .card-viewer {
@@ -159,4 +180,10 @@ footer {
   flex-direction: row;
   gap: 2em;
  justify-content: center;
+}
+
+.content1, .content2, .content3, .conviv{
+ margin: 2px, 3px, 2px, 3px;
+ padding: 5px;
+ width: 500px;
 }
