@@ -27,7 +27,7 @@ if (boton) {
     let materia = document.querySelector(".materia").value;
     let fechaSelec = document.querySelector(".fecha").value;
     let fecha = new Date(fechaSelec);
-    let fechaFormat =  fecha.toLocaleDateString();
+    let fechaFormat =  obtenerMes(fecha);
     let curso = document.querySelector(".curso").value;
     let evaluacionCont = document.querySelector(".evaluacionCont").value;
     let evaluacionCont1 = document.querySelector(".evaluacionCont1").value;
@@ -39,7 +39,7 @@ if (boton) {
     text.insertAdjacentHTML('beforeend', `Estudiante: ${estudiante}&nbsp;&nbsp;&nbsp;&nbsp;`);
     text.insertAdjacentHTML('beforeend', `Curso: ${curso}&nbsp;&nbsp;&nbsp;&nbsp;`);
     text.insertAdjacentHTML('beforeend', `Materia: ${materia} ${icono}&nbsp;&nbsp;&nbsp;&nbsp;`);
-    text.insertAdjacentHTML('beforeend', `Fecha: ${fechaFormat}<br>`);
+    text.insertAdjacentHTML('beforeend', `Período evaluado: ${fechaFormat}<br>`);
     text.insertAdjacentHTML('beforeend', `En el trabajo con: ${contenido} Desempeño: ${evaluacionCont} ${textoEvaluacionCont()}<br>`);
     text.insertAdjacentHTML('beforeend', `En el trabajo con: ${contenido1} Desempeño: ${evaluacionCont1} ${textoEvaluacionCont1()}<br>`);
     text.insertAdjacentHTML('beforeend', `En el trabajo con: ${contenido2} Desempeño: ${evaluacionCont2} ${textoEvaluacionCont2()}<br>`);
@@ -111,6 +111,21 @@ const textoEvaluacionCont2 = () => {
         return ". Requiere apoyo e intervención docente en todo momento para lograr construir su aprendizaje.Aún no adquirió el contenido enseñado.";
     } return "";
 }
+
+function obtenerMes(fecha) {
+        if (!(fecha instanceof Date)) {
+        throw new Error('El argumento debe ser una fecha válida');
+    }
+
+       const opciones = { month: 'long' }; 
+       const mes = fecha.toLocaleDateString('es-ES', opciones);
+    
+       
+       return mes.toUpperCase();
+}
+
+
+
 
 const pintarEvaluacion = () => {
     const contenedor = document.getElementById("card-info");
