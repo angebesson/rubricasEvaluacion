@@ -71,14 +71,12 @@ const iconForMat = (materia)=>{
 
 const textoEvaluacionCont = () => {
     let evaluacionCont = document.querySelector(".evaluacionCont").value;
-    let evaluacionCont1 = document.querySelector(".evaluacionCont1").value;
-    let evaluacionCont2 = document.querySelector(".evaluacionCont2").value;
-    if (evaluacionCont  === "Excelente") {
+     if (evaluacionCont  === "Excelente") {
         return ": Utiliza varias vías para resolver la propuesta. Construye su propio aprendizaje, autónomamente."
     } else if (evaluacionCont  === "Muy bueno") {
         return ": Presenta un buen ritmo de trabajo, manifiesta interés, desempeñándose eficazmente.";
     } else if (evaluacionCont  === "Bueno") {
-        return ": Trabaja correctamente en clase.                                ";
+        return ": Trabaja correctamente en clase.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
     } else if (evaluacionCont  === "En proceso(EPAC)") {
         return ": Requiere apoyo e intervención docente en todo momento para lograr construir su aprendizaje.Aún no adquirió el contenido enseñado.";
     } return "";

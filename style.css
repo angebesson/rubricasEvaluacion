@@ -187,6 +187,7 @@ footer {
  margin: 2px, 3px, 2px, 3px;
  padding: 5px;
  width: 500px;
+ font-size: small;
 }
 
 /* Mobile */
@@ -196,5 +197,6 @@ footer {
     margin: 2px, 3px, 2px, 3px;
     padding: 5px;
     width: fit-content;
+    margin-right: 62px;
    }
 }
