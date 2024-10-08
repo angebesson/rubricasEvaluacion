@@ -61,6 +61,8 @@ legend {
 div {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   }
 
 button {
@@ -133,7 +135,7 @@ footer {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -176,7 +178,12 @@ footer {
   margin: 20px;
   justify-content: center;
 }
-
+#evaluation{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    align-items: center;
+}
 .encabezado{
   display: flex;
   flex-direction: row;
