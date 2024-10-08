@@ -159,3 +159,12 @@ function clearForm() {
     }
 };
 clearButton.addEventListener("click", clearForm)
+
+const printBtn = document.getElementById("printButton");
+
+if(printBtn){
+    printBtn.addEventListener("click", function() {
+        print();
+});
+
+};

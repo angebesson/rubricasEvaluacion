@@ -151,6 +151,7 @@ footer {
   border-radius: 10px;
   justify-content: space-around;
   background: linear-gradient(to right, #ff7f5f7e, #feb47b6b);
+  font-size: medium;
 }
 .card-info {
   background-color: #fafafa;
@@ -181,8 +182,11 @@ footer {
   flex-direction: row;
   gap: 2em;
  justify-content: center;
+ 
 }
-
+.card-content{
+  font-size: medium;
+}
 .content1, .content2, .content3, .conviv{
  margin: 2px, 3px, 2px, 3px;
  padding: 5px;
