@@ -62,7 +62,7 @@ div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+    align-items: center;
   }
 
 button {
@@ -194,11 +194,14 @@ footer {
 .card-content{
   font-size: medium;
 }
-.content1, .content2, .content3, .conviv{
+div .content1, .content2, .content3, .conviv{
  margin: 2px, 3px, 2px, 3px;
  padding: 5px;
  width: 500px;
  font-size: small;
+ align-items: baseline;
+ justify-content: baseline;
+ margin-left: 10px;
 }
 
 /* Mobile */
