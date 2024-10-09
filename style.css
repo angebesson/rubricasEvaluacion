@@ -204,6 +204,22 @@ div .content1, .content2, .content3, .conviv{
  margin-left: 10px;
 }
 
+.button-print{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  outline: none;
+}
+.button-print:hover{
+  background: #eeeeee;
+
+}
 /* Mobile */
 @media (max-width:655px) {
 
