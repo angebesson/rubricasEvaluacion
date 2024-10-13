@@ -130,143 +130,17 @@ function obtenerMes(fecha) {
 }
 
 
+        function imprimo (){
+               const tbody = document.querySelector('.card-info')
+    if (tbody.childElementCount === 0) {
+        alert('No se puede crear el PDF ya que no existen registros')
+        return
+    }
 
-
-// const pintarEvaluacion = () => {
-//     const contenedor = document.getElementById("card-info");
-//     const div = document.createElement('div');
-//     div.classList.add('card');
-//     div.innerHTML += `<div class="card-image">
-//                            <span class="card-title">${estudiante}</span>
-//                             </div>
-//                          <div class="card-content">
-//                              <p>${producto.tipo} | ${producto.litros} litros</p>
-//                              <p> $${producto.precio}</p>
-//                          </div>
-//                         `
-//     contenedor.appendChild(div);
-// };
-
-// function clearForm() {
-//     inputContainers = Array.from(document.querySelectorAll('.input-container'));
-//     for (const container of inputContainers) {
-//         container.innerHTML = ``;
-//         budgetNumberInput.value = '';
-//         output.innerText = '';
-//         output.classList.add('hide');
-//     }
-// };
-// clearButton.addEventListener("click", clearForm)
-
-const printBtn = document.querySelector(".button-print");
-if (printBtn) {
-    printBtn.addEventListener("click", function () {
-        // Crea una nueva ventana
-        const printWindow = window.open('', '', 'width=600,height=400');
-        const cardContent = document.querySelector('.card-info').outerHTML;
-
-        // Estilos para la impresión
-        printWindow.document.write(`
-            <html>
-                <head>
-                    <title>Imprimir Card</title>
-                    <style>
-                    
-                    body {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
- }
-                    .card-info {
-  background-color: #fafafa;
-  display: flex;
-  width: fit-content;
-  margin: 10px;
-  padding: 10px;
-  justify-content: center;
-  
-}
-                    div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-    align-items: center;
-  }
-                .card-title{
-  color: #32229a;
-  position: unset;
-  text-align: center;
-   border-radius: 10px;
-  justify-content: space-around;
-  background: linear-gradient(to right, #ff7f5f7e, #feb47b6b);
-  font-size: medium;
-}
-                       .encabezado{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
- 
-}
-                    .card-content{
-  font-size: medium;
-}
-                    #text {
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-}
-                    div .content1, .content2, .content3, .conviv{
- margin: 2px, 3px, 2px, 3px;
- font-size: small;
- align-items: baseline;
- justify-content: baseline;
- margin-left: 10px;
-}
-                    </style>
-                </head>
-                <body>
-                    ${cardContent}
-                </body>
-            </html>
-        `);
-
-        printWindow.document.close(); // Cierra el documento
-        printWindow.focus(); // Enfoca la ventana
-        printWindow.print(); // Abre el cuadro de diálogo de impresión
-        printWindow.close(); // Cierra la ventana después de imprimir
-    });
-};
-
-// document.getElementById("printButton").addEventListener("click", function() {
-//     // Crea una nueva ventana
-//     const printWindow = window.open('', '', 'width=600,height=400');
-//     const cardContent = document.querySelector('.card').outerHTML;
-
-//     // Estilos para la impresión
-//     printWindow.document.write(`
-//         <html>
-//             <head>
-//                 <title>Imprimir Card</title>
-//                 <style>
-//                     body {
-//                         font-family: Arial, sans-serif;
-//                         margin: 20px;
-//                     }
-//                     .card {
-//                         border: 1px solid #ccc;
-//                         border-radius: 5px;
-//                         padding: 20px;
-//                         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-//                     }
-//                 </style>
-//             </head>
-//             <body>
-//                 ${cardContent}
-//             </body>
-//         </html>
-//     `);
-
-//     printWindow.document.close(); // Cierra el documento
-//     printWindow.focus(); // Enfoca la ventana
-//     printWindow.print(); // Abre el cuadro de diálogo de impresión
-//     printWindow.close(); // Cierra la ventana después de imprimir
-// });
+            html2canvas(document.querySelector('#text')).then((canvas)=>{
+                let base64image = canvas.toDataURL('image/png');
+                let pdf = new jsPDF ('p','px', [1600,1131]);
+                pdf.addImage (base64image, 'PNG',15,15,495,310);
+                pdf.save('rubrica')
+            })
+        }

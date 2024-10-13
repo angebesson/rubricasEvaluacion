@@ -18,6 +18,7 @@ header, footer, aside, nav, form, iframe, .button-print, fieldset {
     margin: 10px;
     padding: 10px;
     justify-content: center;
+    align-items: baseline;
     
   }
   #evaluation{
@@ -34,7 +35,8 @@ header, footer, aside, nav, form, iframe, .button-print, fieldset {
    
   }
   .card-content{
-    font-size: medium;
+        font-size: medium;
+     
   }
   div .content1, .content2, .content3, .conviv{
    margin: 2px, 3px, 2px, 3px;
