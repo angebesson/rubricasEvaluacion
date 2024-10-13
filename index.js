@@ -133,7 +133,15 @@ function obtenerMes(fecha) {
         function imprimo (){
                const tbody = document.querySelector('.card-info')
     if (tbody.childElementCount === 0) {
-        alert('No se puede crear el PDF ya que no existen registros')
+        Toastify({
+            text: "No hay datos para PDF",
+            className: "info",
+            position: "center",
+            style: {
+                background: "linear-gradient(to right,  #ffadad, #f5f6f7)",
+                color: "black"
+            }
+        }).showToast();
         return
     }
 
