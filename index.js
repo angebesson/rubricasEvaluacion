@@ -134,7 +134,7 @@ function obtenerMes(fecha) {
                const tbody = document.querySelector('.card-info')
     if (tbody.childElementCount === 0) {
         Toastify({
-            text: "No hay datos para PDF",
+            text: "No hay datos para crear PDF",
             className: "info",
             position: "center",
             style: {
