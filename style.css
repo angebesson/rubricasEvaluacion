@@ -4,16 +4,7 @@
   box-sizing: border-box;
   font-family: "Lato", Helvetica, Arial, sans-serif;
 }
-@media print{
-  body * :not(#text) :not(#text *){
-    visibility: hidden;
-  }
-  #text{
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-}
+
 :root {
   --light-grey: #222325;
   --dark-blue: #0a0a23;
@@ -37,6 +28,12 @@ body {
 }
 a{
   text-decoration: none;
+  color: #092313;
+  
+}
+i {
+  font-size: 23px;
+  color:#F28A2E;
 }
 h1 {
   text-align: center;
