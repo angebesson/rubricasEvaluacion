@@ -19,8 +19,8 @@
 body {
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-size: 18px;
-  color: #213547;
-    background-color: #899ea1;
+  color: #131842;
+    background-color: #ECCEAE;
 }
 
 .text-shadow {
@@ -28,12 +28,14 @@ body {
 }
 a{
   text-decoration: none;
-  color: #092313;
+  color:#131842;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   
 }
 i {
   font-size: 23px;
-  color:#F28A2E;
+  color:#E68369;
+  background-color: #FBF6E2;
 }
 h1 {
   text-align: center;
@@ -66,15 +68,19 @@ button {
   cursor: pointer;
   border-radius: 12px;
   text-decoration: none;
-  background-color: var(--light-yellow);
-  border: 2px solid var(--dark-yellow);
+  background-color: #E68369;
+  border: 2px solid #FBF6E2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 button,
 input,
 select {
   min-height: 24px;
-  color: var(--dark-blue);
+  border-radius: 7px;
+  color: #131842;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 fieldset,
@@ -85,6 +91,7 @@ input {
   width: 90%;
   max-width: 680px;
   margin: 5px;
+  border-radius: 7px;
 }
 
 .output {
@@ -143,7 +150,7 @@ footer {
 }
 
 .card-title{
-  color: #32229a;
+  color:#131842;
   position: unset;
   text-align: center;
   padding: 10px;
@@ -206,14 +213,15 @@ div .content1, .content2, .content3, .conviv{
   width: 50px;
   height: 50px;
   display: flex;
-  color: #0a0a23;
+  color:#131842;
   justify-content: center;
   align-items: center;
   font-size: larger;
   border-radius: 50%;
-  background: #fafafa;
+  background: #FBF6E2;
   border: none;
   outline: none;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 .button-print:hover{
   background: #eeeeee;
