@@ -226,3 +226,19 @@ function obtenerMes(fecha) {
       pdf.save('variasRubricas.pdf');
     });
   };
+
+
+  //Dark mode
+
+if (document.getElementById('interruptor')) {
+    const interruptor = document.getElementById('interruptor');
+    const mainEvaluacion = document.querySelector('.main-evaluator')
+    interruptor.onclick = () => {
+      interruptor.classList.toggle('active');
+      if (interruptor.className == 'theme-switch__checkbox active') {
+        mainEvaluacion.classList.toggle('dark')
+      } else {
+        mainEvaluacion.classList.toggle('dark')
+      }
+    }
+  }
