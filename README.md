@@ -9,6 +9,8 @@
 - CSS
 - JavaScript
 - FontAwesome
+- html2canvas
+- jspdf
 
 
 ## Authors
