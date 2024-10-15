@@ -2,9 +2,7 @@ const text = document.querySelector("#text");
 const boton = document.getElementById("btn-agregar");
 let materia = document.querySelector(".materia").value;
 
-function accionUsuario(event) {
-    event.preventDefault()
-}
+
 
 if (text) { text.innerText = "Resultado de evaluación: "; }
 if (boton) {
@@ -129,7 +127,6 @@ function obtenerMes(fecha) {
     return mes.toUpperCase();
 }
 
-
         function imprimo (){
                const tbody = document.querySelector('.card-info')
     if (tbody.childElementCount === 0) {
@@ -147,8 +144,85 @@ function obtenerMes(fecha) {
 
             html2canvas(document.querySelector('#text')).then((canvas)=>{
                 let base64image = canvas.toDataURL('image/png');
+                console.log(base64image);
                 let pdf = new jsPDF ('p','px', [1600,1131]);
                 pdf.addImage (base64image, 'PNG',15,15,495,310);
                 pdf.save('rubrica')
             })
         }
+
+        //HOJA de VARIAS EVALUACIONES
+    const agregarEvaluacion = () => {
+        const tbody = document.querySelector('.card-info')
+        if (tbody.childElementCount === 0) {
+         Toastify({
+             text: "No hay datos para agregar",
+             className: "info",
+             position: "center",
+             style: {
+                 background: "linear-gradient(to right,  #ffadad, #f5f6f7)",
+                 color: "black"
+             }
+         }).showToast();
+         return
+        }
+         if (tbody.childElementCount >= 1) {
+            html2canvas(document.querySelector('#text')).then((canvas) => {
+                let base64image = canvas.toDataURL('image/png');
+                
+                let contenedor = document.getElementById("content-eval");
+                if (contenedor) {
+                    // If you want to add the image to the HTML:
+                    let img = document.createElement('img');
+                    img.src = base64image;
+                    img.style.width = '495px';
+                    img.style.height = '310px';
+                    contenedor.appendChild(img);
+                } else {
+                    console.error("Element with id 'content-eval' not found");
+                }
+            });
+        }
+    }
+
+
+ const generatePDF = () => {
+    const tbody = document.querySelector('#content-eval')
+    if (tbody.childElementCount === 0) {
+     Toastify({
+         text: "No hay datos para crear PDF",
+         className: "info",
+         position: "center",
+         style: {
+             background: "linear-gradient(to right,  #ffadad, #f5f6f7)",
+             color: "black"
+         }
+     }).showToast();
+     return
+    }
+    html2canvas(document.querySelector('#content-eval'), {
+      scale: 2 // Increase scale for better quality
+    }).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
+      
+      // A4 size in pts: 595.28 x 841.89
+      const pdf = new jsPDF({
+        orientation: 'p',
+        unit: 'pt',
+        format: 'a4'
+      });
+      
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      const imgWidth = canvas.width;
+      const imgHeight = canvas.height;
+      
+      const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+      
+      const imgX = (pdfWidth - imgWidth * ratio) / 2;
+      const imgY = 30; // Give it a little top margin
+      
+      pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
+      pdf.save('variasRubricas.pdf');
+    });
+  };

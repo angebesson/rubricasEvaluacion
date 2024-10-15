@@ -130,12 +130,27 @@
             <div>
                 <div class="card-info" id="text"></div>
             </div>
-            <button class="button-print" type="button" onclick="imprimo()" >
-                            
+            <div class="buttons">
+                <button class="button-print" type="button" onclick="imprimo()" >
+                           
+                    <i class="fa-solid fa-file-pdf"></i>
+                </button>
+                                        
+                    <button class="button-print" type="button" onclick="agregarEvaluacion()" >
+                                
+                        <i class="fa-solid fa-file-circle-plus"></i>
+                    </button>
+                
+            </div>
+          
+        </div>
+        <section class="contiene-evaluaciones">
+            <div id="content-eval"></div>
+            <button class="button-print-all" type="button" onclick=" generatePDF()" >                        
                 <i class="fa-solid fa-file-pdf"></i>
             </button>
-        </div>
-      
+        </section>
+        
     </main>
     <footer>
       
