@@ -155,6 +155,7 @@ select,
   font-size: medium;
 }
 .card-info {
+  color:#131842;
   background-color: #fafafa;
   display: flex;
   width: fit-content;
